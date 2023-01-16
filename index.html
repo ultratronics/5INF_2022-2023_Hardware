@@ -1,0 +1,65 @@
+<img alt="Italian Trulli" id="myPicture">
+<p id="test"></p>
+<div class="column">
+    <img id="im1"">
+    <img id="im2"">
+    <img id="im3"">
+    <img id="im4">
+    <img id="im5">
+    <img id="im6">
+    <img id="im7">
+  </div>
+<div class="column">
+    <img id="in1"">
+    <img id="in2"">
+    <img id="in3"">
+    <img id="in4">
+    <img id="in5">
+    <img id="in6">
+    <img id="in7">
+  </div>
+
+
+<script>
+let player1 = [];
+let player2 = [];
+window.onload = startGame;
+
+function choosePic() {
+
+document.getElementById("im1").src = "%20(" + player1[0] + ").png";
+document.getElementById("im2").src = "%20(" + player1[1] + ").png";
+document.getElementById("im3").src = "%20(" + player1[2] + ").png";
+document.getElementById("im4").src = "%20(" + player1[3] + ").png";
+document.getElementById("im5").src = "%20(" + player1[4] + ").png";
+document.getElementById("im6").src = "%20(" + player1[5] + ").png";
+document.getElementById("im7").src = "%20(" + player1[6] + ").png";
+
+document.getElementById("in1").src = "%20(" + player2[0] + ").png";
+document.getElementById("in2").src = "%20(" + player2[1] + ").png";
+document.getElementById("in3").src = "%20(" + player2[2] + ").png";
+document.getElementById("in4").src = "%20(" + player2[3] + ").png";
+document.getElementById("in5").src = "%20(" + player2[4] + ").png";
+document.getElementById("in6").src = "%20(" + player2[5] + ").png";
+document.getElementById("in7").src = "%20(" + player2[6] + ").png";
+}
+
+
+function startGame(){
+
+for(let i = 0; i<7; i++){
+var randomNum = Math.floor(Math.random() * 108 + 1 );
+player1.push(randomNum);
+var randomNum = Math.floor(Math.random() * 108 + 1 );
+player2.push(randomNum);
+
+console.log(player1[i]);
+console.log(player2[i]);
+choosePic();
+}
+}
+
+
+
+
+</script>
