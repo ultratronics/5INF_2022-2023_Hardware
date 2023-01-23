@@ -1,0 +1,151 @@
+<head>
+ <button onclick="addCard()">voeg kaart toe</button>
+ <div ondrop="drop(event)"ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"><img class="zoom" id="stapel"> </div>
+
+
+
+
+    <style>
+    #div1{
+    width:350px;
+    height:100px;
+    padding:10px;
+    border: 1px solid #aaaaaa;
+
+
+    }
+.zoom {
+  padding: 0px;
+  transition: transform .2s; /* Animation */
+  width: 100px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+</style>
+</head>
+
+
+
+<p id="test"></p>
+
+<div class="column" id="player1">
+    <img class="zoom" id="af1" draggable ="true" ondragstart="drag(event)">
+    <img class="zoom" id="af2" draggable ="true" ondragstart="drag(event)">
+    <img class="zoom" id="af3" draggable ="true" ondragstart="drag(event)">
+    <img class="zoom" id="af4" draggable ="true" ondragstart="drag(event)">
+    <img class="zoom" id="af5" draggable ="true" ondragstart="drag(event)">
+    <img class="zoom" id="af6" draggable ="true" ondragstart="drag(event)">
+    <img class="zoom" id="af7" draggable ="true" ondragstart="drag(event)">
+  </div>
+
+
+
+<div class="column" id="player2">
+    <img class="zoom" id="al1" draggable ="true" ondragstart="drag(event)">
+    <img class="zoom" id="al2" draggable ="true" ondragstart="drag(event)">
+    <img class="zoom" id="al3" draggable ="true" ondragstart="drag(event)">
+    <img class="zoom" id="al4" draggable ="true" ondragstart="drag(event)">
+    <img class="zoom" id="al5" draggable ="true" ondragstart="drag(event)">
+    <img class="zoom" id="al6" draggable ="true" ondragstart="drag(event)">
+    <img class="zoom" id="al7" draggable ="true" ondragstart="drag(event)">
+  </div>
+
+
+
+<script>
+let player1 = [];
+let player2 = [];
+window.onload = startGame;
+
+function choosePic() {
+
+document.getElementById("af1").src = player1[0] +".png";
+document.getElementById("af2").src = player1[1] +".png";
+document.getElementById("af3").src = player1[2] +".png";
+document.getElementById("af4").src = player1[3] +".png";
+document.getElementById("af5").src = player1[4] +".png";
+document.getElementById("af6").src = player1[5] +".png";
+document.getElementById("af7").src = player1[6] +".png";
+
+document.getElementById("al1").src = player2[0] +".png";
+document.getElementById("al2").src = player2[1] +".png";
+document.getElementById("al3").src = player2[2] +".png";
+document.getElementById("al4").src = player2[3] +".png";
+document.getElementById("al5").src = player2[4] +".png";
+document.getElementById("al6").src = player2[5] +".png";
+document.getElementById("al7").src = player2[6] +".png";
+}
+let wieIsAanDeBeurt = false;
+
+function startGame(){
+
+
+for(let i = 0; i<7; i++){
+var randomNum = Math.floor(Math.random() * 54 + 1 );
+player1.push(randomNum);
+var randomNum = Math.floor(Math.random() * 54 + 1 );
+player2.push(randomNum);
+
+console.log(player1[i]);
+console.log(player2[i]);
+choosePic();
+}
+}
+
+function addCard(){
+//sla beurt over
+if(wieIsAanDeBeurt == false){
+
+
+
+  let nieuweId = player1.length +1;
+  let nieuweIdString ="af" + nieuweId;
+  let oldLength = player1.length;
+   document.getElementById("player1").innerHTML+='<img class ="zoom" draggable ="true" ondragstart="drag(event)" id="'+nieuweIdString + '">';
+   var randomNum = Math.floor(Math.random() * 54 + 1 );
+   player1.push(randomNum);
+   document.getElementById(nieuweIdString).src =player1[player1.length-1] +".png";
+   console.log(player1[player1.length-1])
+
+wieIsAanDeBeurt = true;
+
+}else{
+
+
+  let nieuweId = player2.length +1;
+  let nieuweIdString ="al" + nieuweId;
+  let oldLength = player2.length;
+   document.getElementById("player2").innerHTML+='<img class ="zoom" draggable ="true" ondragstart="drag(event)" id="'+nieuweIdString + '">';
+   var randomNum = Math.floor(Math.random() * 54 + 1 );
+   player2.push(randomNum);
+   document.getElementById(nieuweIdString).src =player2[player2.length-1] +".png";
+   //console.log(player1[player1.length-1])
+
+wieIsAanDeBeurt = false;
+
+}
+
+
+
+}
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  //ev.target.appendChild(document.getElementById(data));
+  document.getElementById("stapel").src = document.getElementById(data).src;
+  document.getElementById(data).remove();
+}
+</script>
