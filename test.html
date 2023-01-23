@@ -36,55 +36,41 @@
 <p id="test"></p>
 
 <div class="column" id="player1">
-    <img class="zoom" id="af1" draggable ="true" ondragstart="drag(event)">
-    <img class="zoom" id="af2" draggable ="true" ondragstart="drag(event)">
-    <img class="zoom" id="af3" draggable ="true" ondragstart="drag(event)">
-    <img class="zoom" id="af4" draggable ="true" ondragstart="drag(event)">
-    <img class="zoom" id="af5" draggable ="true" ondragstart="drag(event)">
-    <img class="zoom" id="af6" draggable ="true" ondragstart="drag(event)">
-    <img class="zoom" id="af7" draggable ="true" ondragstart="drag(event)">
-  </div>
-
-
-
+</div>
 <div class="column" id="player2">
-    <img class="zoom" id="al1" draggable ="true" ondragstart="drag(event)">
-    <img class="zoom" id="al2" draggable ="true" ondragstart="drag(event)">
-    <img class="zoom" id="al3" draggable ="true" ondragstart="drag(event)">
-    <img class="zoom" id="al4" draggable ="true" ondragstart="drag(event)">
-    <img class="zoom" id="al5" draggable ="true" ondragstart="drag(event)">
-    <img class="zoom" id="al6" draggable ="true" ondragstart="drag(event)">
-    <img class="zoom" id="al7" draggable ="true" ondragstart="drag(event)">
-  </div>
+</div>
+
+
+<script>
+  for(var i = 0; i < 7; i++){
+    document.getElementById("player1").innerHTML+='<img class ="zoom" draggable ="true" ondragstart="drag(event)" id="a' + i + '">';
+    document.getElementById("player2").innerHTML+='<img class ="zoom" draggable ="true" ondragstart="drag(event)" id="b' + i + '">';
+
+  }
+</script>
+
 
 
 
 <script>
 let beurtOverSlaan = [2,15,39,54];
-
-
-let player1 = [];
-let player2 = [];
+let aantalSpelers = 2;
+let players = new Array(aantalSpelers);
+for (var i = 0; i < aantalSpelers; i++) {
+  players[i] = [];
+}
 window.onload = startGame;
 
 function choosePic() {
 
-document.getElementById("af1").src = player1[0] +".png";
-document.getElementById("af2").src = player1[1] +".png";
-document.getElementById("af3").src = player1[2] +".png";
-document.getElementById("af4").src = player1[3] +".png";
-document.getElementById("af5").src = player1[4] +".png";
-document.getElementById("af6").src = player1[5] +".png";
-document.getElementById("af7").src = player1[6] +".png";
-
-document.getElementById("al1").src = player2[0] +".png";
-document.getElementById("al2").src = player2[1] +".png";
-document.getElementById("al3").src = player2[2] +".png";
-document.getElementById("al4").src = player2[3] +".png";
-document.getElementById("al5").src = player2[4] +".png";
-document.getElementById("al6").src = player2[5] +".png";
-document.getElementById("al7").src = player2[6] +".png";
+for(var i=0; i < 7; i++){
+  document.getElementById("a" + i).src = players[0][i] +".png";
+  document.getElementById("b" + i).src = players[1][i] +".png";
 }
+
+}
+
+
 let wieIsAanDeBeurt = false;
 
 function startGame(){
@@ -92,12 +78,12 @@ function startGame(){
 
 for(let i = 0; i<7; i++){
 var randomNum = Math.floor(Math.random() * 54 + 1 );
-player1.push(randomNum);
+players[0].push(randomNum);
 var randomNum = Math.floor(Math.random() * 54 + 1 );
-player2.push(randomNum);
+players[1].push(randomNum);
 
-console.log(player1[i]);
-console.log(player2[i]);
+console.log(players[i]);
+console.log(players[i]);
 choosePic();
 }
 }
@@ -117,14 +103,14 @@ function addCard(aantalKaarten){
 if(wieIsAanDeBeurt == false){
 
 for (var i = 0; i < aantalKaarten; i++) {
-  let nieuweId = player1.length +1;
+  let nieuweId = players[0].length +1;
   let nieuweIdString ="af" + nieuweId;
-  let oldLength = player1.length;
+  let oldLength = players[0].length;
    document.getElementById("player1").innerHTML+='<img class ="zoom" draggable ="true" ondragstart="drag(event)" id="'+nieuweIdString + '">';
    var randomNum = Math.floor(Math.random() * 54 + 1 );
-   player1.push(randomNum);
-   document.getElementById(nieuweIdString).src =player1[player1.length-1] +".png";
-   console.log(player1[player1.length-1]);
+   players[0].push(randomNum);
+   document.getElementById(nieuweIdString).src =players[0][players[0].length-1] +".png";
+   console.log(players[0][players[0].length-1]);
 }
 
 
@@ -134,13 +120,13 @@ wieIsAanDeBeurt = true;
 }else{
 
 for (var i = 0; i < aantalKaarten; i++) {
-  let nieuweId = player2.length +1;
+  let nieuweId = players[1].length +1;
   let nieuweIdString ="al" + nieuweId;
-  let oldLength = player2.length;
+  let oldLength = players[1].length;
    document.getElementById("player2").innerHTML+='<img class ="zoom" draggable ="true" ondragstart="drag(event)" id="'+nieuweIdString + '">';
    var randomNum = Math.floor(Math.random() * 54 + 1 );
-   player2.push(randomNum);
-   document.getElementById(nieuweIdString).src =player2[player2.length-1] +".png";
+   players[1].push(randomNum);
+   document.getElementById(nieuweIdString).src =players[1][players[1].length-1] +".png";
    //console.log(player1[player1.length-1])
 }
 
@@ -181,5 +167,6 @@ if(checkBeurtOverslaan(+bron.match(/\d+/g)[0])){
   wieIsAanDeBeurt != wieIsAanDeBeurt;
 
 }
+console.log(wieIsAanDeBeurt);
 }
 </script>
