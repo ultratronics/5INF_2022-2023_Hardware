@@ -1,7 +1,10 @@
 <head>
- <button onclick="addCard()">voeg kaart toe</button>
- <div ondrop="drop(event)"ondragover="allowDrop(event)"></div>
-    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"><img class="zoom" id="stapel"> </div>
+ <button onclick="addCard(1)">voeg kaart toe</button>
+ <button onclick="addCard(2)">+2</button>
+ <button onclick="addCard(4)">+4</button>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img class="zoom" id="stapel">
+    </div>
 
 
 
@@ -57,6 +60,9 @@
 
 
 <script>
+let beurtOverSlaan = [2,15,39,54];
+
+
 let player1 = [];
 let player2 = [];
 window.onload = startGame;
@@ -96,12 +102,21 @@ choosePic();
 }
 }
 
-function addCard(){
+
+function checkBeurtOverslaan(kaartGetrokken){
+
+return beurtOverSlaan.includes(kaartGetrokken);
+
+}
+
+
+
+
+function addCard(aantalKaarten){
 //sla beurt over
 if(wieIsAanDeBeurt == false){
 
-
-
+for (var i = 0; i < aantalKaarten; i++) {
   let nieuweId = player1.length +1;
   let nieuweIdString ="af" + nieuweId;
   let oldLength = player1.length;
@@ -109,13 +124,16 @@ if(wieIsAanDeBeurt == false){
    var randomNum = Math.floor(Math.random() * 54 + 1 );
    player1.push(randomNum);
    document.getElementById(nieuweIdString).src =player1[player1.length-1] +".png";
-   console.log(player1[player1.length-1])
+   console.log(player1[player1.length-1]);
+}
+
+
 
 wieIsAanDeBeurt = true;
 
 }else{
 
-
+for (var i = 0; i < aantalKaarten; i++) {
   let nieuweId = player2.length +1;
   let nieuweIdString ="al" + nieuweId;
   let oldLength = player2.length;
@@ -124,6 +142,8 @@ wieIsAanDeBeurt = true;
    player2.push(randomNum);
    document.getElementById(nieuweIdString).src =player2[player2.length-1] +".png";
    //console.log(player1[player1.length-1])
+}
+
 
 wieIsAanDeBeurt = false;
 
@@ -147,5 +167,19 @@ function drop(ev) {
   //ev.target.appendChild(document.getElementById(data));
   document.getElementById("stapel").src = document.getElementById(data).src;
   document.getElementById(data).remove();
+
+
+let bron  = "" + document.getElementById("stapel").src;
+//console.log(bron);
+console.log(bron.match(/\d+/g));
+console.log(checkBeurtOverslaan(+bron.match(/\d+/g)[0]))
+if(checkBeurtOverslaan(+bron.match(/\d+/g)[0])){
+
+  wieIsAanDeBeurt = wieIsAanDeBeurt;
+
+}else{
+  wieIsAanDeBeurt != wieIsAanDeBeurt;
+
+}
 }
 </script>
