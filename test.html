@@ -1,7 +1,9 @@
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
  <button onclick="addCard(1)">voeg kaart toe</button>
  <button onclick="addCard(2)">+2</button>
  <button onclick="addCard(4)">+4</button>
+  <button onclick="ajaxUpdateCards()">UpdateAjax</button>
     <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
       <img class="zoom" id="stapel">
     </div>
@@ -134,6 +136,17 @@ function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
 }
 
+function ajaxUpdateCards(){
+
+  $.get( "/newfile.txt", function( data ) {
+
+    alert( "Load was performed." );
+    document.getElementById("test").innerHTML = data;
+    document.getElementById("stapel").src = data + ".png";
+  });
+
+}
+
 
 function display(){
   if(wieIsAanDeBeurt == 1){
@@ -177,12 +190,18 @@ function drop(ev) {
 
 
 let bron  = "" + document.getElementById("stapel").src;
+
 //console.log(bron);
 console.log(bron.match(/\d+/g));
-console.log(checkBeurtOverslaan(+bron.match(/\d+/g)[0]))
+console.log(checkBeurtOverslaan(+bron.match(/\d+/g)[bron.match(/\d+/g).length - 1]))
 
+$.ajax({
+  type: "POST",
+  url: "/",
+  data: { welkekaart: ("" + bron.match(/\d+/g)[bron.match(/\d+/g).length - 1])}
+});
 
-if(checkBeurtOverslaan(+bron.match(/\d+/g)[0])){
+if(checkBeurtOverslaan(+bron.match(/\d+/g)[bron.match(/\d+/g).length - 1])){
 if(reverse){
 wieIsAanDeBeurt -= 1;
 

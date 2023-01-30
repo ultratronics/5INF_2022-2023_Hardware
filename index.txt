@@ -1,0 +1,11 @@
+<img alt="italian Trulli" id="mypicture">
+
+<script>
+window.onload = choosePic;
+
+var myPix = new Array("blue_0.png","Blue_Draw.png","Blue_Reverse.png","blue_1.png","blue_2.png","blue_3.png","Red_9.png","Green_8.png","Yellow_5.png", "Wild.png", "Wild_Draw.png");
+function choosePic(){
+var randomNum = Math.floor(Math.random() * myPix.length);
+document.getElementById("mypicture").src = myPix[randomNum];
+}
+</script>
