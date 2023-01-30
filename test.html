@@ -33,7 +33,7 @@
 
 
 
-<p id="test"></p>
+<p id="test">Player1</p>
 
 <div class="column" id="player1">
 </div>
@@ -42,19 +42,18 @@
 
 
 <script>
+  let wieIsAanDeBeurt = 0;
+  let aantalSpelers = 2;
+
+
   for(var i = 0; i < 7; i++){
-    document.getElementById("player1").innerHTML+='<img class ="zoom" draggable ="true" ondragstart="drag(event)" id="a' + i + '">';
-    document.getElementById("player2").innerHTML+='<img class ="zoom" draggable ="true" ondragstart="drag(event)" id="b' + i + '">';
 
+    for(let j=0; j<aantalSpelers; j++){
+document.getElementById("player" + (j + 1)).innerHTML+='<img class ="zoom" draggable ="true" ondragstart="drag(event)" id="a' + j +i +'">';
+    }
   }
-</script>
 
-
-
-
-<script>
 let beurtOverSlaan = [2,15,39,54];
-let aantalSpelers = 2;
 let players = new Array(aantalSpelers);
 for (var i = 0; i < aantalSpelers; i++) {
   players[i] = [];
@@ -63,15 +62,17 @@ window.onload = startGame;
 
 function choosePic() {
 
-for(var i=0; i < 7; i++){
-  document.getElementById("a" + i).src = players[0][i] +".png";
-  document.getElementById("b" + i).src = players[1][i] +".png";
+for(let i=0; i < 7; i++){
+//7 kaarten
+  for(let j=0; j<aantalSpelers; j++){
+document.getElementById("a" + j + i).src = players[j][i] +".png";
+
+  }
 }
 
 }
 
 
-let wieIsAanDeBeurt = false;
 
 function startGame(){
 
@@ -100,41 +101,25 @@ return beurtOverSlaan.includes(kaartGetrokken);
 
 function addCard(aantalKaarten){
 //sla beurt over
-if(wieIsAanDeBeurt == false){
 
 for (var i = 0; i < aantalKaarten; i++) {
-  let nieuweId = players[0].length +1;
-  let nieuweIdString ="af" + nieuweId;
-  let oldLength = players[0].length;
-   document.getElementById("player1").innerHTML+='<img class ="zoom" draggable ="true" ondragstart="drag(event)" id="'+nieuweIdString + '">';
+  let nieuweId = players[wieIsAanDeBeurt].length +1;
+  let nieuweIdString ="a" + wieIsAanDeBeurt + nieuweId;
+  let oldLength = players[wieIsAanDeBeurt].length;
+   document.getElementById("player" + (wieIsAanDeBeurt + 1)).innerHTML+='<img class ="zoom" draggable ="true" ondragstart="drag(event)" id="'+nieuweIdString + '">';
    var randomNum = Math.floor(Math.random() * 54 + 1 );
-   players[0].push(randomNum);
-   document.getElementById(nieuweIdString).src =players[0][players[0].length-1] +".png";
-   console.log(players[0][players[0].length-1]);
+   players[wieIsAanDeBeurt].push(randomNum);
+   document.getElementById(nieuweIdString).src =players[wieIsAanDeBeurt][players[wieIsAanDeBeurt].length-1] +".png";
+   console.log(players[wieIsAanDeBeurt][players[wieIsAanDeBeurt].length-1]);
 }
 
 
-
-wieIsAanDeBeurt = true;
-
+if (wieIsAanDeBeurt < aantalSpelers-1){
+wieIsAanDeBeurt += 1;
 }else{
 
-for (var i = 0; i < aantalKaarten; i++) {
-  let nieuweId = players[1].length +1;
-  let nieuweIdString ="al" + nieuweId;
-  let oldLength = players[1].length;
-   document.getElementById("player2").innerHTML+='<img class ="zoom" draggable ="true" ondragstart="drag(event)" id="'+nieuweIdString + '">';
-   var randomNum = Math.floor(Math.random() * 54 + 1 );
-   players[1].push(randomNum);
-   document.getElementById(nieuweIdString).src =players[1][players[1].length-1] +".png";
-   //console.log(player1[player1.length-1])
+wieIsAanDeBeurt = 0;
 }
-
-
-wieIsAanDeBeurt = false;
-
-}
-
 
 
 }
@@ -159,14 +144,21 @@ let bron  = "" + document.getElementById("stapel").src;
 //console.log(bron);
 console.log(bron.match(/\d+/g));
 console.log(checkBeurtOverslaan(+bron.match(/\d+/g)[0]))
+
+
 if(checkBeurtOverslaan(+bron.match(/\d+/g)[0])){
 
-  wieIsAanDeBeurt = wieIsAanDeBeurt;
-
-}else{
-  wieIsAanDeBeurt != wieIsAanDeBeurt;
-
 }
+
+if(wieIsAanDeBeurt){
+  document.getElementById("test").innerHTML = "Player1";
+  wieIsAanDeBeurt = 0;
+}else{
+document.getElementById("test").innerHTML = "Player2";
+wieIsAanDeBeurt = 1;
+}
+
+
 console.log(wieIsAanDeBeurt);
 }
 </script>
