@@ -11,8 +11,8 @@
 
     <style>
     #div1{
-    width:350px;
-    height:100px;
+    width:250px;
+    height:150px;
     padding:10px;
     border: 1px solid #aaaaaa;
 
@@ -83,15 +83,14 @@ players[0].push(randomNum);
 var randomNum = Math.floor(Math.random() * 54 + 1 );
 players[1].push(randomNum);
 
-console.log(players[i]);
-console.log(players[i]);
+//console.log(players[i]);
 choosePic();
 }
 }
 
 
 function checkBeurtOverslaan(kaartGetrokken){
-
+console.log(beurtOverSlaan.includes(kaartGetrokken));
 return beurtOverSlaan.includes(kaartGetrokken);
 
 }
@@ -100,7 +99,8 @@ return beurtOverSlaan.includes(kaartGetrokken);
 
 
 function addCard(aantalKaarten){
-//sla beurt over
+
+
 
 for (var i = 0; i < aantalKaarten; i++) {
   let nieuweId = players[wieIsAanDeBeurt].length +1;
@@ -113,15 +113,13 @@ for (var i = 0; i < aantalKaarten; i++) {
    console.log(players[wieIsAanDeBeurt][players[wieIsAanDeBeurt].length-1]);
 }
 
+console.log(aantalSpelers);
 
-if (wieIsAanDeBeurt < aantalSpelers-1){
-wieIsAanDeBeurt += 1;
-}else{
+updatePlayer();
 
-wieIsAanDeBeurt = 0;
-}
-
-
+console.log("Speler:");
+console.log(wieIsAanDeBeurt);
+display();
 }
 
 function allowDrop(ev) {
@@ -130,6 +128,28 @@ function allowDrop(ev) {
 
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
+}
+
+
+function display(){
+  if(wieIsAanDeBeurt){
+    document.getElementById("test").innerHTML = "Player2";
+  }else{
+  document.getElementById("test").innerHTML = "Player1";
+  }
+
+}
+
+function updatePlayer(){
+
+  if (wieIsAanDeBeurt < aantalSpelers-1){
+  wieIsAanDeBeurt += 1;
+  }else{
+
+  wieIsAanDeBeurt -= aantalSpelers;
+  }
+
+
 }
 
 function drop(ev) {
@@ -148,15 +168,11 @@ console.log(checkBeurtOverslaan(+bron.match(/\d+/g)[0]))
 
 if(checkBeurtOverslaan(+bron.match(/\d+/g)[0])){
 
+wieIsAanDeBeurt += 1;
 }
 
-if(wieIsAanDeBeurt){
-  document.getElementById("test").innerHTML = "Player1";
-  wieIsAanDeBeurt = 0;
-}else{
-document.getElementById("test").innerHTML = "Player2";
-wieIsAanDeBeurt = 1;
-}
+updatePlayer();
+display();
 
 
 console.log(wieIsAanDeBeurt);
