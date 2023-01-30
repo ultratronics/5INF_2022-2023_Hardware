@@ -39,11 +39,14 @@
 </div>
 <div class="column" id="player2">
 </div>
-
+<div class="column" id="player3">
+</div>
 
 <script>
+
+  let reverse = 0;
   let wieIsAanDeBeurt = 0;
-  let aantalSpelers = 2;
+  let aantalSpelers = 3;
 
 
   for(var i = 0; i < 7; i++){
@@ -82,7 +85,8 @@ var randomNum = Math.floor(Math.random() * 54 + 1 );
 players[0].push(randomNum);
 var randomNum = Math.floor(Math.random() * 54 + 1 );
 players[1].push(randomNum);
-
+var randomNum = Math.floor(Math.random() * 54 + 1 );
+players[2].push(randomNum);
 //console.log(players[i]);
 choosePic();
 }
@@ -132,8 +136,11 @@ function drag(ev) {
 
 
 function display(){
-  if(wieIsAanDeBeurt){
+  if(wieIsAanDeBeurt == 1){
     document.getElementById("test").innerHTML = "Player2";
+  }else if(wieIsAanDeBeurt == 2){
+
+  document.getElementById("test").innerHTML = "Player3";
   }else{
   document.getElementById("test").innerHTML = "Player1";
   }
@@ -141,7 +148,15 @@ function display(){
 }
 
 function updatePlayer(){
+if(reverse){
+  if (wieIsAanDeBeurt > 0){
+  wieIsAanDeBeurt -= 1;
+  }else{
+  wieIsAanDeBeurt += aantalSpelers -1;
+  }
 
+
+}else{
   if (wieIsAanDeBeurt < aantalSpelers-1){
   wieIsAanDeBeurt += 1;
   }else{
@@ -150,6 +165,7 @@ function updatePlayer(){
   }
 
 
+}
 }
 
 function drop(ev) {
@@ -167,8 +183,14 @@ console.log(checkBeurtOverslaan(+bron.match(/\d+/g)[0]))
 
 
 if(checkBeurtOverslaan(+bron.match(/\d+/g)[0])){
+if(reverse){
+wieIsAanDeBeurt -= 1;
 
+}else{
 wieIsAanDeBeurt += 1;
+
+}
+
 }
 
 updatePlayer();
