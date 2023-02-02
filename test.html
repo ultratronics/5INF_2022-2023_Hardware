@@ -1,9 +1,9 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
- <button onclick="addCard(1)">voeg kaart toe</button>
+  <button onclick="addCard(1)">voeg kaart toe</button>
  <button onclick="addCard(2)">+2</button>
  <button onclick="addCard(4)">+4</button>
-  <button onclick="ajaxUpdateCards()">UpdateAjax</button>
+  <!-- <button onclick="ajaxUpdateCards()">UpdateAjax</button> -->
     <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
       <img class="zoom" id="stapel">
     </div>
@@ -39,16 +39,11 @@
 
 <div class="column" id="player1">
 </div>
-<div class="column" id="player2">
-</div>
-<div class="column" id="player3">
-</div>
-
 <script>
 
   let reverse = 0;
   let wieIsAanDeBeurt = 0;
-  let aantalSpelers = 3;
+  let aantalSpelers = 1;
 
 
   for(var i = 0; i < 7; i++){
@@ -85,10 +80,7 @@ function startGame(){
 for(let i = 0; i<7; i++){
 var randomNum = Math.floor(Math.random() * 54 + 1 );
 players[0].push(randomNum);
-var randomNum = Math.floor(Math.random() * 54 + 1 );
-players[1].push(randomNum);
-var randomNum = Math.floor(Math.random() * 54 + 1 );
-players[2].push(randomNum);
+
 //console.log(players[i]);
 choosePic();
 }
@@ -135,13 +127,13 @@ function allowDrop(ev) {
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
 }
-
+setInterval(ajaxUpdateCards, 100);
 function ajaxUpdateCards(){
 
   $.get( "/newfile.txt", function( data ) {
 
-    alert( "Load was performed." );
-    document.getElementById("test").innerHTML = data;
+    //alert( "Load was performed." );
+    //document.getElementById("test").innerHTML = data;
     document.getElementById("stapel").src = data + ".png";
   });
 
