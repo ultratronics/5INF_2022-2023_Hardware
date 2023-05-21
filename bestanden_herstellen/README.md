@@ -19,6 +19,16 @@
 - Uitleg over het doel van elke scanmethode en wanneer deze te gebruiken.
 - Bespreken van populaire data recovery software tools die het scannen vergemakkelijken, zoals Recuva, EaseUS Data Recovery Wizard en TestDisk.
 
+-PhotoRec - Een krachtige tool voor bestandsherstel die een breed scala aan bestandstypen kan herstellen, zoals documenten, foto's, video's en meer. Het werkt door het scannen van het bestandssysteem en het zoeken naar bestandssignaturen of headers, waardoor het bestanden kan herstellen, zelfs als ze zijn verwijderd of het bestandssysteem beschadigd is.
+
+-TestDisk - Naast zijn mogelijkheden voor partitieherstel kan TestDisk ook zoeken naar en verwijderde bestanden herstellen door het scannen van het bestandssysteem. Het kan de bestandssysteemstructuren analyseren en verwijderde bestandspartities lokaliseren om ze te herstellen.
+
+-Recuva - Deze populaire software voor gegevensherstel heeft een optie voor "Diepe Scan", die een grondige scan van het bestandssysteem uitvoert om verwijderde bestanden te vinden en te herstellen die mogelijk niet worden gevonden tijdens een snelle scan.
+
+-GetDataBack - GetDataBack kan het bestandssysteem op een laag niveau scannen en bestanden herstellen die permanent zijn verwijderd of verloren zijn gegaan als gevolg van formattering of beschadiging van het bestandssysteem. Het ondersteunt verschillende bestandssystemen, waaronder FAT, exFAT, NTFS en meer.
+
+-R-Studio - R-Studio is een uitgebreide software voor gegevensherstel die het bestandssysteem kan scannen om verwijderde bestanden te lokaliseren en te herstellen. Het heeft geavanceerde scanalgoritmen die bestanden kunnen herstellen van verschillende bestandssystemen en zelfs beschadigde RAID-arrays kunnen reconstrueren.
+
 ## IV. Stap voor stap proces voor het herstellen van verwijderde mappen en bestanden (40 minuten)
 - Schets een systematische aanpak voor het herstellen van verwijderde mappen en bestanden met behulp van scantechnieken:
    1. Stop het gebruik van de betrokken schijf om te voorkomen dat gegevens worden overschreven.
