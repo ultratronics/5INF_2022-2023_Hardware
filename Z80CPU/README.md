@@ -12,6 +12,23 @@ Toelichten van de basiswerking van het intern geheugen en geheugenadressering.
 ## 1.1 Stuurorgaan
 Het stuurorgaan, ook wel bekend als de "control unit", coördineert de werking van de processor. Het controleert en regelt de uitvoering van instructies en zorgt voor de juiste volgorde van bewerkingen.
 
+### Hieronder worden de belangrijkste taken en functies van het stuurorgaan toegelicht:
+
+Instructie-ophalen: Het stuurorgaan haalt instructies op uit het geheugen. Het selecteert het juiste geheugenadres waar de volgende instructie zich bevindt en haalt deze op. Het ophalen van instructies gebeurt in de volgorde waarin ze worden uitgevoerd.
+
+Instructie-decodering: Nadat een instructie is opgehaald, decodeert het stuurorgaan deze instructie. Dit houdt in dat het de instructie analyseert en bepaalt welke specifieke bewerking ermee moet worden uitgevoerd. Het bepaalt welke registers, geheugenlocaties of andere componenten bij de uitvoering van de instructie betrokken zijn.
+
+Sequencing en controle: Het stuurorgaan zorgt ervoor dat de instructies in de juiste volgorde worden uitgevoerd. Het controleert de stroom van gegevens en instructies tussen verschillende componenten van de processor. Het regelt ook de timing en synchronisatie van de instructies, zodat ze op het juiste moment worden uitgevoerd.
+
+Sturing van de ALU: Het stuurorgaan stuurt de Arithmetic Logic Unit (ALU) aan, die verantwoordelijk is voor rekenkundige bewerkingen en logische operaties. Het geeft de nodige opdrachten en gegevens door aan de ALU, zodat deze de juiste berekeningen kan uitvoeren.
+
+Sturing van registers en geheugen: Het stuurorgaan communiceert ook met registers en het geheugen. Het kan gegevens vanuit registers naar het geheugen schrijven of gegevens vanuit het geheugen naar registers halen, afhankelijk van de instructie die wordt uitgevoerd.
+
+Het stuurorgaan is verantwoordelijk voor het coördineren van al deze taken en zorgt ervoor dat de instructies correct en efficiënt worden uitgevoerd. Het zorgt ervoor dat de verschillende componenten van de processor samenwerken om de gewenste bewerkingen uit te voeren volgens de instructies die zijn opgehaald uit het geheugen.
+
+
+
+
 ## 1.2 Rekenorgaan
 Het rekenorgaan, ook wel bekend als de "arithmetic logic unit" (ALU), voert rekenkundige en logische bewerkingen uit, zoals optellen, aftrekken, vermenigvuldigen en logische vergelijkingen.
 
