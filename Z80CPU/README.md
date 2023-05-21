@@ -32,6 +32,23 @@ Het stuurorgaan is verantwoordelijk voor het coördineren van al deze taken en z
 ## 1.2 Rekenorgaan
 Het rekenorgaan, ook wel bekend als de "arithmetic logic unit" (ALU), voert rekenkundige en logische bewerkingen uit, zoals optellen, aftrekken, vermenigvuldigen en logische vergelijkingen.
 
+### 1.2 Hieronder worden de belangrijkste taken en functies van het rekenorgaan toegelicht:
+
+Rekenkundige bewerkingen: Het rekenorgaan voert verschillende rekenkundige bewerkingen uit, zoals optellen, aftrekken, vermenigvuldigen en delen. Het kan ook andere rekenkundige operaties uitvoeren, zoals modulo (rest bij deling) en exponentiële berekeningen. Deze bewerkingen worden uitgevoerd op gegevens die in registers zijn opgeslagen.
+
+Logische operaties: Naast rekenkundige bewerkingen kan het rekenorgaan ook logische operaties uitvoeren, zoals logische AND, OR, XOR en NOT. Deze operaties worden toegepast op bits binnen registers om bijvoorbeeld bitgewijze vergelijkingen of logische schakelingen te realiseren.
+
+Vergelijkingen: Het rekenorgaan kan vergelijkingen uitvoeren, zoals het controleren op gelijkheid, ongelijkheid, groter dan of kleiner dan. Deze vergelijkingen kunnen worden toegepast op gegevens in registers om te bepalen welke acties moeten worden ondernomen op basis van de resultaten.
+
+Bewerkingen met binaire getallen: Aangezien een processor werkt met binaire gegevens, kan het rekenorgaan ook binaire bewerkingen uitvoeren, zoals verschuivingen (links of rechts) en rotaties van bits. Deze bewerkingen zijn nuttig voor verschillende toepassingen, zoals het vermenigvuldigen of delen van getallen met machten van 2.
+
+Wiskundige en logische instructies: Het rekenorgaan voert instructies uit die rekenkundige of logische bewerkingen vereisen. Deze instructies worden gecodeerd in de machinecode van het programma en worden door het stuurorgaan naar het rekenorgaan gestuurd voor uitvoering.
+
+Het rekenorgaan werkt nauw samen met het stuurorgaan en ontvangt instructies en gegevens vanuit registers en het geheugen. Het voert de vereiste bewerkingen uit op deze gegevens en stuurt het resultaat terug naar registers of het geheugen, afhankelijk van de instructies en de verdere verwerking die nodig is.
+
+Door het uitvoeren van rekenkundige bewerkingen, logische operaties en vergelijkingen speelt het rekenorgaan een essentiële rol in het verwerken van gegevens en het uitvoeren van berekeningen binnen de processor.
+
+
 ## 1.3 Registers
 Registers zijn kleine geheugeneenheden binnen de processor die worden gebruikt voor het opslaan van tijdelijke gegevens en instructies tijdens de verwerking. Voorbeelden van registers zijn het instructieregister (IR), het gegevensregister (DR) en het adresregister (AR).
 
