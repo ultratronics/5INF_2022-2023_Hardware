@@ -52,6 +52,18 @@ Door het uitvoeren van rekenkundige bewerkingen, logische operaties en vergelijk
 ## 1.3 Registers
 Registers zijn kleine geheugeneenheden binnen de processor die worden gebruikt voor het opslaan van tijdelijke gegevens en instructies tijdens de verwerking. Voorbeelden van registers zijn het instructieregister (IR), het gegevensregister (DR) en het adresregister (AR).
 
+### Hieronder worden de belangrijkste aspecten van registers toegelicht:
+
+Opslag van gegevens: Registers dienen als opslaglocaties voor gegevens binnen de processor. Ze zijn snel toegankelijk en worden gebruikt om tijdelijke gegevens op te slaan, zoals operanden, tussenresultaten en eindresultaten van berekeningen. Registers hebben een veel kleinere opslagcapaciteit dan het hoofdgeheugen, maar hun snelle toegangstijd maakt ze ideaal voor veelvoorkomende bewerkingen.
+
+Gegevensmanipulatie: Registers kunnen worden gebruikt voor het uitvoeren van rekenkundige bewerkingen en logische operaties. Ze bevatten de gegevens waarop de bewerkingen worden uitgevoerd en kunnen het resultaat van de bewerkingen opslaan. De ALU kan bijvoorbeeld gegevens uit registers halen, deze bewerken en het resultaat weer terugplaatsen in registers.
+
+Opslag van adresgegevens: Naast het opslaan van gegevens kunnen registers ook worden gebruikt om geheugenadressen op te slaan. Dit stelt de processor in staat om snel toegang te krijgen tot specifieke geheugenlocaties tijdens het uitvoeren van instructies. Door het opslaan van adresgegevens in registers kan de processor efficiënter werken bij het ophalen en opslaan van gegevens in het geheugen.
+
+Speciale registers: Naast de algemene registers die worden gebruikt voor gegevensopslag, bevat een processor vaak speciale registers met specifieke functies. Dit kunnen bijvoorbeeld instructieregisters zijn die de huidige instructie opslaan tijdens de uitvoering, of programmatellers die bijhouden welke instructie er vervolgens moet worden opgehaald. Speciale registers spelen een cruciale rol bij de controle van de instructiestroom en de synchronisatie van de processoractiviteiten.
+
+Registers zijn snel toegankelijke opslaglocaties die een belangrijke rol spelen bij het opslaan en manipuleren van gegevens tijdens de verwerking van instructies. Ze dienen als tijdelijke opslagplaatsen voor gegevens en kunnen rekenkundige bewerkingen uitvoeren. Door hun snelle toegangstijd dragen registers bij aan de efficiënte werking van de processor.
+
 ## 1.4 Klok
 De klok is een essentieel onderdeel van een processor en zorgt voor de timing en synchronisatie van de verschillende bewerkingen. Het reguleert de snelheid waarmee instructies worden uitgevoerd en de timing van gegevensoverdracht.
 
