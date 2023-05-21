@@ -46,3 +46,35 @@
 - Bespreek de beste praktijken om gegevensverlies te voorkomen, zoals regelmatige back-ups en het voorzichtig verwijderen van bestanden.
 -Het belang uitleggen van een schoon en georganiseerd bestandssysteem.
 -Benadruk voorzorgsmaatregelen bij het gebruik van data recovery software, inclusief het vermijden van installatie op de getroffen schijf.
+
+
+
+
+
+
+
+Gids: Zoeken naar verloren bestanden in een specifieke map met behulp van PhotoRec
+PhotoRec is een krachtige tool voor bestandsherstel die kan worden gebruikt om verloren bestanden te herstellen, zelfs als ze zijn verwijderd of verloren zijn gegaan in een specifieke map. Volg de onderstaande stappen om bestanden te zoeken en te herstellen met behulp van PhotoRec:
+
+Download en installeer PhotoRec: Ga naar de officiële website van PhotoRec en download de juiste versie voor je besturingssysteem. Volg de instructies om de software op je computer te installeren.
+
+Start PhotoRec: Na installatie kun je PhotoRec starten via het startmenu of de toepassingsmap.
+
+Selecteer de doelschijf: PhotoRec toont een lijst met beschikbare schijven en opslagapparaten. Kies de schijf waarop de specifieke map zich bevindt waarin je de verloren bestanden wilt herstellen. Gebruik de pijltoetsen om de schijf te selecteren en druk op Enter.
+
+Kies het bestandssysteemtype: Selecteer het bestandssysteemtype van de doelschijf. Als je het niet zeker weet, selecteer dan de optie "Intel/PC partition" en druk op Enter.
+
+Selecteer de doelmap: Nu moet je de doelmap opgeven waarin je de verloren bestanden wilt herstellen. Blader door de bestandsstructuur en selecteer de specifieke map waarin je de verloren bestanden vermoedt. Druk op C om door de mappen te navigeren en druk op C om een map te selecteren.
+
+Start het herstelproces: Nadat je de doelmap hebt geselecteerd, zal PhotoRec je vragen waar de herstelde bestanden moeten worden opgeslagen. Selecteer een geschikte locatie op een andere schijf of op een extern opslagapparaat en bevestig je keuze.
+
+Scan naar verloren bestanden: PhotoRec zal nu beginnen met het scannen van de opgegeven doelmap en alle submappen om verloren bestanden te herstellen. Het zal verschillende bestandstypen detecteren en herstellen tijdens het scanproces.
+
+Wacht tot het scanproces is voltooid: Het scannen kan even duren, afhankelijk van de grootte van de doelmap en de snelheid van je computer. Wacht geduldig tot het scanproces is voltooid.
+
+Bekijk en herstel de gevonden bestanden: Zodra het scannen is voltooid, zal PhotoRec een lijst met gevonden bestanden weergeven. Je kunt door de lijst navigeren en de bestanden bekijken. Selecteer de gewenste bestanden die je wilt herstellen en druk op C om ze te markeren.
+
+Herstel de geselecteerde bestanden: Nadat je de gewenste bestanden hebt geselecteerd, druk je op C om het herstelproces
+te starten. PhotoRec zal de geselecteerde bestanden herstellen en ze opslaan op de opgegeven herstellocatie.
+
+Controleer de herstelde bestanden: Nadat het herstelproces is voltooid, ga je naar de herstellocatie die je hebt opgegeven. Controleer of de herstelde bestanden aanwezig zijn en of ze correct zijn hersteld.
