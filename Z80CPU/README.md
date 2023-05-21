@@ -123,3 +123,8 @@ Het correct begrijpen van de werking van het intern geheugen en geheugenadresser
 In deze les hebben we de belangrijkste componenten van een processor besproken, zoals het stuurorgaan, het rekenorgaan, registers, klok en cachegeheugen. We hebben ook de belangrijkste stappen in de verwerking van eenvoudige instructies beschreven en de rol van de klok daarbij toegelicht. Daarnaast hebben we verschillende soorten intern geheugen behandeld, waaronder cachegeheugen en werkgeheugen, en de basiswerking van het intern geheugen en geheugenadressering toegelicht. Het begrijpen van deze concepten is cruciaal voor een diepgaand inzicht in de werking van een processor.
 
 Aanvullende bronnen en oefeningen kunnen worden verstrekt om de studenten verder te laten oefenen en het begrip van de behandelde onderwerpen te versterken.
+
+
+
+
+https://github.com/wixette/8800-simulator.git
