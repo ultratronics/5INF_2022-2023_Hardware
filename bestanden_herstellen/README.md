@@ -78,3 +78,10 @@ Herstel de geselecteerde bestanden: Nadat je de gewenste bestanden hebt geselect
 te starten. PhotoRec zal de geselecteerde bestanden herstellen en ze opslaan op de opgegeven herstellocatie.
 
 Controleer de herstelde bestanden: Nadat het herstelproces is voltooid, ga je naar de herstellocatie die je hebt opgegeven. Controleer of de herstelde bestanden aanwezig zijn en of ze correct zijn hersteld.
+
+#Tools zoals PhotoRec voeren meestal een zoekopdracht uit op basis van bestandshandtekeningen in plaats van op basis van mappen. Ze scannen het hele opslagapparaat, op zoek naar specifieke bestandshandtekeningen of patronen om verwijderde bestanden te identificeren en te herstellen, ongeacht hun oorspronkelijke locatie of mapstructuur. Deze tools analyseren de gegevens op een laag niveau en kunnen de bestandshandtekeningen herkennen, zelfs als de bestanden uit de index zijn verwijderd.
+
+Hoewel u zich met deze hulpmiddelen niet rechtstreeks op een specifieke map kunt richten, kunt u toch bestanden herstellen die zich oorspronkelijk in die map bevonden door het hele opslagapparaat te scannen. Na het scannen kunt u de herstelde bestanden filteren en sorteren op basis van hun bestandstypen of extensies, wat u kan helpen de bestanden te vinden die oorspronkelijk in de specifieke map stonden waarin u geïnteresseerd bent.
+
+Houd in gedachten dat het succes van bestandsherstel afhangt van verschillende factoren, waaronder de mate van gegevensfragmentatie, het overschrijven van gegevens en de staat van het opslagapparaat. Om de kans op succesvol herstel te vergroten, is het raadzaam snel te handelen en te voorkomen dat er nieuwe gegevens naar het opslagapparaat worden geschreven.
+
