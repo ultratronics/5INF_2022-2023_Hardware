@@ -67,6 +67,25 @@ Registers zijn snel toegankelijke opslaglocaties die een belangrijke rol spelen 
 ## 1.4 Klok
 De klok is een essentieel onderdeel van een processor en zorgt voor de timing en synchronisatie van de verschillende bewerkingen. Het reguleert de snelheid waarmee instructies worden uitgevoerd en de timing van gegevensoverdracht.
 
+
+
+
+
+
+### 1.2.4 De belangrijkste stappen van de verwerking van eenvoudige instructies
+De verwerking van instructies in een processor omvat een reeks belangrijke stappen. Hieronder worden de belangrijkste stappen toegelicht:
+
+Halenvan instructies: De eerste stap is het ophalen van instructies uit het geheugen. De instructies bevinden zich in het hoofdgeheugen en worden een voor een naar de processor gehaald. De processor maakt gebruik van het adresregister om de juiste instructie op te halen op basis van het huidige programmateller.
+
+Interpreteren van instructies: Nadat een instructie is opgehaald, wordt deze geïnterpreteerd door de processor. De processor begrijpt de instructie en bepaalt welke bewerking ermee moet worden uitgevoerd.
+
+Uitvoeren van instructies: Zodra de instructie is geïnterpreteerd, voert de processor de bijbehorende bewerking uit. Dit kan variëren van eenvoudige rekenkundige operaties tot complexe gegevensmanipulaties. De ALU (Arithmetic Logic Unit) voert de berekeningen uit en slaat het resultaat op in registers.
+
+Bijwerken van programmateller: Na het uitvoeren van een instructie wordt de programmateller bijgewerkt om aan te geven welke instructie als volgende moet worden uitgevoerd. De programmateller bevat het geheugenadres van de volgende instructie. Door de programmateller bij te werken, kan de processor sequentieel de instructies volgen in het programma.
+
+De klok speelt een cruciale rol bij het coördineren van deze stappen. De klok zorgt voor een regelmatige pulserende signaalstroom die de processor aangeeft wanneer elke stap moet worden uitgevoerd. Elke puls van de klok vertegenwoordigt een tik en geeft de processor de timinginformatie die nodig is om de instructies stap voor stap te verwerken.
+
+De verwerking van instructies in een processor omvat het halen, interpreteren en uitvoeren van instructies. Dit proces wordt gestuurd door de klok en maakt gebruik van registers en de ALU om gegevens te manipuleren. Door deze stappen sequentieel uit te voeren, kan de processor complexe taken uitvoeren en instructies verwerken volgens de instructiestroom van het programma.
 ## 1.5 Cachegeheugen
 Cachegeheugen is een klein, snel geheugentype dat wordt gebruikt om vaak gebruikte gegevens en instructies op te slaan. Het bevindt zich dichtbij de processor en zorgt voor snelle toegang tot veelgebruikte informatie, waardoor de totale verwerkingstijd wordt verkort.
 
