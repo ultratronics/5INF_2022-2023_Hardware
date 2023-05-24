@@ -128,3 +128,5 @@ Aanvullende bronnen en oefeningen kunnen worden verstrekt om de studenten verder
 
 
 https://github.com/wixette/8800-simulator.git
+
+https://s2js.com/altair/sim.html
